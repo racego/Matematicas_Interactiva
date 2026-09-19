@@ -1,0 +1,70 @@
+{
+  "id": "reto-01",
+  "titulo": "Detectives de afirmaciones",
+  "descripcion": "Analiza cada situación y decide si la conclusión es verdadera o falsa.",
+  "tipo": "verdadero-falso",
+  "puntajePorPregunta": 20,
+
+  "preguntas": [
+    {
+      "id": 1,
+      "situacion": "Camila afirma que -8 pertenece al conjunto de los números enteros. Luego escribe -8 como la fracción -8/1 y concluye que también es un número racional.",
+      "pregunta": "¿Es correcta la conclusión de Camila?",
+      "opciones": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": "Verdadero",
+      "retroalimentacionCorrecta": "Correcto. Todo número entero puede escribirse como una fracción de enteros con denominador distinto de cero. Por ejemplo, -8 = -8/1. Por tanto, todo entero es racional.",
+      "retroalimentacionIncorrecta": "Revisa la definición de número racional. Un número es racional si puede escribirse como a/b, donde a y b son enteros y b es diferente de cero."
+    },
+    {
+      "id": 2,
+      "situacion": "En una calculadora aparecen los números 0.75 y 3.1415926535... Andrés afirma que, por tener representación decimal, ambos necesariamente son racionales.",
+      "pregunta": "¿Es correcta la afirmación de Andrés?",
+      "opciones": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": "Falso",
+      "retroalimentacionCorrecta": "Correcto. Algunos números decimales son racionales, como 0.75 = 3/4, pero existen números irracionales cuya representación decimal es infinita y no periódica.",
+      "retroalimentacionIncorrecta": "No toda representación decimal corresponde a un número racional. Los racionales tienen desarrollo decimal finito o periódico."
+    },
+    {
+      "id": 3,
+      "situacion": "Sara multiplica √2 por √2 y obtiene 2. Luego recuerda que √2 es irracional.",
+      "pregunta": "¿Es verdadero afirmar que el producto de dos números irracionales siempre es irracional?",
+      "opciones": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": "Falso",
+      "retroalimentacionCorrecta": "Correcto. √2 es irracional, pero √2 · √2 = 2, que es racional. Por tanto, el producto de dos irracionales no siempre es irracional.",
+      "retroalimentacionIncorrecta": "Busca un contraejemplo. Si multiplicas √2 por √2, el resultado es 2."
+    },
+    {
+      "id": 4,
+      "situacion": "En un juego se reparten 7 puntos entre 2 participantes en partes iguales. Un estudiante afirma que, como 7 y 2 son números enteros, el resultado de 7 ÷ 2 también debe ser entero.",
+      "pregunta": "¿Es correcta esta afirmación?",
+      "opciones": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": "Falso",
+      "retroalimentacionCorrecta": "Correcto. 7/2 = 3.5, que no es un número entero. El cociente de dos enteros no necesariamente es entero.",
+      "retroalimentacionIncorrecta": "Comprueba 7 ÷ 2. El resultado es 3.5 y no pertenece al conjunto de los enteros."
+    },
+    {
+      "id": 5,
+      "situacion": "Un sensor registra el producto de dos mediciones y obtiene exactamente 0. El estudiante recuerda la propiedad del producto nulo.",
+      "pregunta": "Si a · b = 0, ¿es cierto que al menos uno de los factores debe ser cero?",
+      "opciones": [
+        "Verdadero",
+        "Falso"
+      ],
+      "respuestaCorrecta": "Verdadero",
+      "retroalimentacionCorrecta": "Correcto. Si el producto de dos números reales es cero, entonces a = 0, b = 0 o ambos son cero.",
+      "retroalimentacionIncorrecta": "Recuerda la propiedad del producto nulo: a · b = 0 implica que al menos uno de los factores es cero."
+    }
+  ]
+}

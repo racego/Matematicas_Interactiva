@@ -1,296 +1,761 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+/* =========================================
+   MATEMÁTICAS INTERACTIVAS
+   Actividades para recordar
+   ========================================= */
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+:root {
+  font-family:
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  color: #243447;
+  background: #eef4f8;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      135deg,
+      #eef5fa 0%,
+      #f7fafc 50%,
+      #e8f1f7 100%
+    );
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+button {
+  font: inherit;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
-
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
 
 #app {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.actividad {
+  width: min(1000px, calc(100% - 40px));
   margin: 0 auto;
+  padding: 35px 0 60px;
+}
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+
+.actividad__encabezado {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 35px;
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(29, 78, 111, 0.08);
+}
+
+.actividad__seccion {
+  display: inline-block;
+
+  background: #e8f4ff;
+  color: #0878c9;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  padding: 7px 14px;
+  border-radius: 999px;
+
+  margin-bottom: 12px;
+}
+
+.actividad__encabezado h1 {
+  color: #163b59;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+
+  margin-bottom: 12px;
+}
+
+.actividad__descripcion {
+  color: #607387;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   PROGRESO
+   ========================================= */
+
+.progreso {
+  background: white;
+  padding: 18px 25px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+
+  box-shadow:
+    0 6px 20px rgba(29, 78, 111, 0.06);
+}
+
+.progreso__datos {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  font-weight: 700;
+  color: #466175;
+
+  margin-bottom: 12px;
+}
+
+.progreso__barra {
+  width: 100%;
+  height: 10px;
+
+  background: #dce8ef;
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.progreso__avance {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #1688d4,
+      #25a5dc
+    );
+
+  border-radius: inherit;
+
+  transition: width 0.4s ease;
+}
+
+/* =========================================
+   TARJETA DE PREGUNTA
+   ========================================= */
+
+.pregunta {
+  background: white;
+  border-radius: 20px;
+
+  padding: 32px 36px;
+
+  box-shadow:
+    0 12px 35px rgba(29, 78, 111, 0.09);
+}
+
+.pregunta__numero {
+  display: inline-block;
+
+  color: #0878c9;
+  background: #eaf6ff;
+
+  font-size: 0.9rem;
+  font-weight: 800;
+
+  padding: 7px 13px;
+
+  border-radius: 8px;
+
+  margin-bottom: 22px;
+}
+
+/* =========================================
+   SITUACIÓN
+   ========================================= */
+
+.situacion {
+  background: #f5f9fc;
+
+  border-left: 5px solid #1688d4;
+
+  padding: 22px 25px;
+  border-radius: 10px;
+
+  margin-bottom: 28px;
+}
+
+.situacion h2 {
+  color: #163b59;
+  font-size: 1.15rem;
+
+  margin-bottom: 10px;
+}
+
+.situacion p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+
+  color: #43596b;
+}
+
+.pregunta__texto {
+  color: #17364d;
+
+  font-size: 1.4rem;
+  line-height: 1.45;
+
+  margin-bottom: 22px;
+}
+
+/* =========================================
+   OPCIONES
+   ========================================= */
+
+.opciones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+
+  margin-bottom: 25px;
+}
+
+.opcion {
+  min-height: 60px;
+
+  border: 2px solid #cbdde9;
+  background: white;
+
+  color: #28485f;
+
+  font-size: 1.08rem;
+  font-weight: 700;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.opcion:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  border-color: #1688d4;
+
+  background: #f1f9ff;
+
+  box-shadow:
+    0 6px 16px rgba(22, 136, 212, 0.12);
+}
+
+.opcion:disabled {
+  cursor: default;
+}
+
+/* Respuesta correcta */
+
+.opcion.correcta {
+  border-color: #2ea66f;
+  background: #eaf8f0;
+  color: #17693f;
+}
+
+/* Respuesta incorrecta */
+
+.opcion.incorrecta {
+  border-color: #d95050;
+  background: #fff0f0;
+  color: #a72f2f;
+}
+
+/* =========================================
+   RETROALIMENTACIÓN
+   ========================================= */
+
+.retroalimentacion {
+  margin-top: 20px;
+
+  padding: 20px 24px;
+
+  border-radius: 12px;
+
+  line-height: 1.65;
+}
+
+.retroalimentacion h3 {
+  margin-bottom: 8px;
+  font-size: 1.15rem;
+}
+
+.respuesta-correcta {
+  background: #eaf8f0;
+  border: 1px solid #9edab8;
+
+  color: #17693f;
+}
+
+.respuesta-incorrecta {
+  background: #fff3e8;
+  border: 1px solid #f0c28f;
+
+  color: #83501e;
+}
+
+/* =========================================
+   BOTÓN SIGUIENTE
+   ========================================= */
+
+.boton-siguiente {
+  display: block;
+
+  margin-left: auto;
+  margin-top: 24px;
+
+  border: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0878c9,
+      #159bd7
+    );
+
+  color: white;
+
+  padding: 13px 23px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.boton-siguiente:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(8, 120, 201, 0.25);
+}
+
+/* =========================================
+   MUY IMPORTANTE:
+   OCULTA ELEMENTOS ANTES DE TIEMPO
+   ========================================= */
+
+.oculto {
+  display: none !important;
+}
+
+/* =========================================
+   RESULTADO FINAL
+   ========================================= */
+
+.resultado {
+  max-width: 720px;
+
+  margin-top: 80px;
+
+  background: white;
+
   text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+
+  padding: 50px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 15px 45px rgba(29, 78, 111, 0.12);
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+.resultado h1 {
+  color: #163b59;
+  margin-bottom: 25px;
 }
 
-#next-steps {
+.resultado__puntaje {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
+  align-items: center;
+  justify-content: center;
 
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
+  width: 150px;
+  height: 150px;
+
+  margin: 20px auto;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0878c9,
+      #20a4db
+    );
+
+  color: white;
+
+  font-size: 2rem;
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 25px rgba(8, 120, 201, 0.25);
+}
+
+.resultado h2 {
+  color: #0878c9;
+  margin-bottom: 15px;
+}
+
+.resultado p {
+  color: #607387;
+
+  font-size: 1.1rem;
+  line-height: 1.6;
+
+  margin-bottom: 25px;
+}
+
+.resultado .boton-siguiente {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .actividad {
+    width: min(100% - 20px, 1000px);
+
+    padding-top: 15px;
   }
 
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
+  .actividad__encabezado,
+  .pregunta {
+    padding: 24px 20px;
   }
 
-  @media (max-width: 1024px) {
+  .progreso__datos {
     flex-direction: column;
-    text-align: center;
+    gap: 5px;
+  }
+
+  .opciones {
+    grid-template-columns: 1fr;
+  }
+
+  .resultado {
+    padding: 35px 20px;
   }
 }
+/* =========================================
+   ESTRUCTURA GENERAL DEL LIBRO DIGITAL
+   ========================================= */
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.libro {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+/* =========================================
+   MENÚ LATERAL
+   ========================================= */
+
+.libro__menu {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      180deg,
+      #075f9d 0%,
+      #0878bd 55%,
+      #086ba8 100%
+    );
+
+  color: white;
+
+  padding: 28px 18px;
+
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  overflow-y: auto;
+
+  box-shadow:
+    5px 0 20px rgba(19, 58, 84, 0.12);
+}
+
+/* =========================================
+   MARCA MATEMÁTICAS 11
+   ========================================= */
+
+.marca {
+  text-align: center;
+
+  padding: 15px 10px 28px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.2);
+}
+
+.marca__grado {
+  font-size: 1.15rem;
+  font-weight: 600;
+
+  opacity: 0.9;
+
+  margin-bottom: 4px;
+}
+
+.marca__numero {
+  font-size: 4.2rem;
+  line-height: 1;
+
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+/* =========================================
+   INFORMACIÓN DE LA UNIDAD
+   ========================================= */
+
+.unidad-menu {
+  padding: 24px 12px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.2);
+}
+
+.unidad-menu span {
+  display: block;
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  color: #bfe7ff;
+
+  margin-bottom: 7px;
+}
+
+.unidad-menu strong {
+  display: block;
+
+  font-size: 1rem;
+  line-height: 1.4;
+
+  color: white;
+}
+
+/* =========================================
+   NAVEGACIÓN
+   ========================================= */
+
+.navegacion {
   display: flex;
+  flex-direction: column;
+
   gap: 8px;
-  margin: 32px 0 0;
 
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  padding-top: 22px;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
-.ticks {
-  position: relative;
+.nav-item {
   width: 100%;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  border: none;
+
+  padding: 13px 14px;
+
+  border-radius: 11px;
+
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  text-align: left;
+
+  font-size: 0.94rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-item span {
+  width: 28px;
+
+  display: inline-flex;
+  justify-content: center;
+
+  font-size: 1.1rem;
+}
+
+.nav-item:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: white;
+
+  transform: translateX(3px);
+}
+
+.nav-item.activo {
+  background: white;
+
+  color: #0878bd;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.14);
+}
+
+/* =========================================
+   ÁREA PRINCIPAL DEL LIBRO
+   ========================================= */
+
+.libro__pagina {
+  min-width: 0;
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef5fa 0%,
+      #f8fbfd 55%,
+      #edf4f8 100%
+    );
+}
+
+/*
+  Sobrescribimos el ancho anterior de
+  .actividad para que funcione dentro del libro.
+*/
+
+.libro__pagina .actividad {
+  width: min(1050px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding-top: 28px;
+}
+
+/* =========================================
+   PEQUEÑO ENCABEZADO VISUAL
+   ========================================= */
+
+.libro__pagina::before {
+  content: "Unidad 1  •  Lógica, conjuntos y números reales";
+
+  display: block;
+
+  padding: 14px 32px;
+
+  background: white;
+
+  color: #527084;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  border-bottom: 1px solid #dce8ef;
+}
+
+/* =========================================
+   AJUSTES PARA PANTALLAS PEQUEÑAS
+   ========================================= */
+
+@media (max-width: 640px) {
+
+  .libro {
+    display: block;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .libro__menu {
+    position: static;
+
+    width: 100%;
+    min-height: auto;
+    height: auto;
+
+    padding: 15px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 8px 10px 15px;
+  }
+
+  .marca__grado {
+    margin: 0;
+  }
+
+  .marca__numero {
+    font-size: 2rem;
+  }
+
+  .unidad-menu {
+    padding: 14px 8px;
+  }
+
+  .navegacion {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    padding-top: 15px;
+  }
+
+  .nav-item {
+    padding: 10px;
+
+    font-size: 0.82rem;
+  }
+
+  .libro__pagina::before {
+    padding: 12px 18px;
+  }
+
+  .libro__pagina .actividad {
+    width: calc(100% - 20px);
+
+    padding-top: 15px;
   }
 }

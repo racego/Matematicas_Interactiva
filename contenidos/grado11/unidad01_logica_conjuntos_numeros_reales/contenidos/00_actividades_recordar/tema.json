@@ -1,0 +1,21 @@
+{
+  "titulo": "Actividades para recordar",
+  "descripcion": "Actividades iniciales para recuperar conocimientos previos antes de comenzar la Unidad 1.",
+  "secciones": [
+    {
+      "id": "que-recuerdas",
+      "titulo": "¿Qué recuerdas?",
+      "tipo": "activacion"
+    },
+    {
+      "id": "diagnostico-rapido",
+      "titulo": "Diagnóstico rápido",
+      "tipo": "diagnostico"
+    },
+    {
+      "id": "reviso-mis-respuestas",
+      "titulo": "Reviso mis respuestas",
+      "tipo": "retroalimentacion"
+    }
+  ]
+}

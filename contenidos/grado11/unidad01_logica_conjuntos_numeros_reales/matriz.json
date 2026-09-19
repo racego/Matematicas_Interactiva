@@ -1,0 +1,16 @@
+{
+  "grado": 11,
+  "unidad": 1,
+  "titulo": "Lógica, conjuntos y números reales",
+
+  "estandar": [
+    "Pensamiento numérico",
+    "Pensamiento variacional"
+  ],
+
+  "planTrabajo": [
+    "Proposiciones",
+    "Conjuntos",
+    "Números reales"
+  ]
+}
